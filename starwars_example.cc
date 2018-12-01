@@ -11,10 +11,10 @@ int main() {
     TIEFighter<unsigned> fighter(50, 9);
     ImperialDestroyer<int> destroyer(150, 20);
     auto battle = SpaceBattle<int, 1, 1020,
-                              DeathStar<long>,//IMP 0
-                              Explorer<int>, //REB 1
-                              TIEFighter<unsigned>, //IMP 2
-                              XWing<float>>(deathStar, //REB 3
+                              DeathStar<long>,
+                              Explorer<int>,
+                              TIEFighter<unsigned>,
+                              XWing<float>>(deathStar,
                                             explorer,
                                             fighter,
                                             xwing);
