@@ -43,18 +43,6 @@ template <typename U>
 using TIEFighter = ImperialStarship <U>;
 
 
-//template <typename I, typename R>
-//void attack(ImperialStarship <I> &imperialShip, XWing <R> &rebelShip) {
-//    rebelShip.takeDamage(imperialShip.getAttackPower());
-//    imperialShip.takeDamage(rebelShip.getAttackPower());
-//}
-//
-//template <typename I, typename R>
-//void attack(ImperialStarship <I> &imperialShip, StarCruiser <R> &rebelShip) {
-//    rebelShip.takeDamage(imperialShip.getAttackPower());
-//    imperialShip.takeDamage(rebelShip.getAttackPower());
-//}
-
 template <typename I, typename R>
 void attack(I &imperialShip, R &rebelShip) {
     rebelShip.takeDamage(imperialShip.getAttackPower());

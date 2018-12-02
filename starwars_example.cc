@@ -10,14 +10,14 @@ int main() {
     DeathStar<long> deathStar(10000, 75);
     TIEFighter<unsigned> fighter(50, 9);
     ImperialDestroyer<int> destroyer(150, 20);
-    auto battle = SpaceBattle<int, 1, 1020,
-                              DeathStar<long>,
-                              Explorer<int>,
-                              TIEFighter<unsigned>,
-                              XWing<float>>(deathStar,
-                                            explorer,
-                                            fighter,
-                                            xwing);
+    auto battle = SpaceBattle<short, 1, 23,
+        DeathStar<long>,
+        Explorer<int>,
+        TIEFighter<unsigned>,
+        XWing<float>>(deathStar,
+                      explorer,
+                      fighter,
+                      xwing);
 
     assert(battle.countRebelFleet() == 2);
     assert(battle.countImperialFleet() == 2);
@@ -34,5 +34,5 @@ int main() {
     assert(battle.countRebelFleet() == 0);
     assert(battle.countImperialFleet() == 1);
 
-    battle.tick(1); // Wypisuje "IMPERIUM WON\n".*/
+    battle.tick(1); // Wypisuje "IMPERIUM WON\n".
 }

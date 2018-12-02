@@ -4,11 +4,9 @@
 #include <type_traits>
 #include <cassert>
 
-//enum class TypeOfShip { XWing, Explorer, StarCruiser };
-
-
 template <typename U, int minSpeed, int maxSpeed, bool canAttack>
 class RebelStarship {
+private:
     U speed;
     U shield;
     U attackPower;
@@ -19,7 +17,6 @@ public:
     RebelStarship(U shield, U speed, U attackPower, typename std::enable_if <(x)>::type * = 0)
         : speed(speed), shield(shield), attackPower(attackPower) {
         assert(minSpeed <= speed && speed <= maxSpeed);
-        //TODO na moodle mówią, że static_assert'y, ale to nie działa
     }
 
     template <bool x = !canAttack>
@@ -37,11 +34,10 @@ public:
     }
 
     void takeDamage(U damage) {
-        if (damage > shield) {
+        if (damage > shield)
             shield = 0;
-        } else {
+        else
             shield -= damage;
-        }
     }
 
     template <bool x = canAttack>
